@@ -6,7 +6,7 @@ export default function RightPane({ data, paginatedData, currentPage, totalPages
         <h2 className="font-bold mb-4">Tabular Pane</h2>
         <div className="mb-2 flex justify-between items-center">
           <button
-            className="px-3 py-1 border rounded bg-gray-100"
+            className="px-3 py-1 border rounded"
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
             disabled={currentPage === 1}
           >
@@ -16,7 +16,7 @@ export default function RightPane({ data, paginatedData, currentPage, totalPages
             Page {currentPage} of {totalPages}
           </span>
           <button
-            className="px-3 py-1 border rounded bg-gray"
+            className="px-3 py-1 border rounded"
             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
             disabled={currentPage === totalPages}
           >
@@ -28,7 +28,7 @@ export default function RightPane({ data, paginatedData, currentPage, totalPages
             <tr>
               {data[0] &&
                 Object.keys(data[0]).map((key) => (
-                  <th key={key} className="border px-2 py-1 bg-gray">{key}</th>
+                  <th key={key} className="border px-2 py-1 bg-gray-100">{key}</th>
                 ))}
             </tr>
           </thead>

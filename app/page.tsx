@@ -57,8 +57,9 @@ export default function Home() {
   const selected = setDataStore((state) => state.selected);
   const setSelected = setDataStore((state) => state.setSelected);
   
-  const rowsPerPage = 100;
+  const rowsPerPage = 50;
 
+  // loading flag
   const isLoading = data.length === 0;
 
   useEffect(() => {
@@ -95,6 +96,7 @@ export default function Home() {
 
   const totalPages = Math.ceil(data.length / rowsPerPage);
  
+  // slice data subsets
   const paginatedData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
 
   // sort by accending vs by table order
